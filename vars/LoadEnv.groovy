@@ -1,4 +1,3 @@
-#!/usr/bin/env groovy
 def call(){
     def envFilePath = "${WORKSPACE}/.env"
     if (fileExists(envFilePath)) {
