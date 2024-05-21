@@ -1,4 +1,5 @@
 def call(){
+    script{
     def envFilePath = "${WORKSPACE}/.env"
     if (fileExists(envFilePath)) {
         def envContent = readFile(envFilePath).trim()
@@ -9,4 +10,5 @@ def call(){
     } else {
         echo "No .env file found"
     }
+}
 }
