@@ -1,6 +1,5 @@
 def call(){
-    sh '''
-    echo loading .env file
+    sh "echo loading .env file"
     def envFilePath = "${WORKSPACE}/.env"
     if (fileExists(envFilePath)) {
         def envContent = readFile(envFilePath).trim()
@@ -9,7 +8,6 @@ def call(){
         env."${key}" = value
     }
     } else {
-        echo "No .env file found"
+        sh "echo No .env file found"
     }
-    '''
 }
